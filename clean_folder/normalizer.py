@@ -1,4 +1,4 @@
-import data
+from clean_folder import data
 
 def normalize(name: str) -> str:  # name - filename without extension
    

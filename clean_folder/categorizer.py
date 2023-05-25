@@ -1,6 +1,6 @@
 import os
-import data
-import utils
+from clean_folder import data, utils
+
 
 
 def categorize(filename: str) -> str:

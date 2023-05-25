@@ -1,5 +1,5 @@
 import unittest
-import categorizer
+from clean_folder import categorizer
 
 
 class CategorizerTests(unittest.TestCase):

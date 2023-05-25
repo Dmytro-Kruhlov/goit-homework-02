@@ -1,8 +1,6 @@
 import os
 import shutil
-import normalizer
-import utils
-import categorizer
+from clean_folder import normalizer, utils, categorizer
 
 
 def move_file(file_path: str, category: str):
@@ -14,7 +12,7 @@ def move_file(file_path: str, category: str):
         os.makedirs(new_folder)
         
     new_file_name = normalizer.normalize(name_without_extension)
-    print(new_file_name)
+    
     destination = os.path.join(new_folder, f"{new_file_name}.{utils.get_extension(filename)}")
     
     shutil.move(file_path, destination)

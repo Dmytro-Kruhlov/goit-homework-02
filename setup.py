@@ -1,14 +1,14 @@
 from setuptools import setup
 
 
-setup(name='sorte_by_DK',
+setup(name='clean_folder',
       version='0.1.0',
       description='File sorter',
-      url='http://github.com/dummy_user/useful',
-      author='Flying Circus',
-      author_email='flyingcircus@example.com',
+      url='https://github.com/Dmytro-Kruhlov/goit-homework-02',
+      author='Dmytro Kruhlov',
+      author_email='hazzy1451@gmail.com',
       license='MIT',
       packages=['clean_folder'],
       entry_points={'console_scripts': [
-          'sorter = Goit_Homework_2.sort:sorter']}
+          'clean-folder = clean_folder.sort:main']}
       )

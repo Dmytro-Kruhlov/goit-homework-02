@@ -1,7 +1,6 @@
 import sys
-import categorizer
-import mover
-import utils
+from clean_folder import categorizer, mover, utils
+
 
 
 def sorter(path_to_folder: str):
@@ -22,11 +21,17 @@ def sorter(path_to_folder: str):
           f"All extensions: {', '.join(categorize_result['all_extensions'])}\n"
           f"Unknown extensions: {', '.join(categorize_result['unknown_extensions'])}")
 
-if __name__ == '__main__':
+
+def main():
     if len(sys.argv) < 2:
         print('You need to specify the folder name for sorting')
         sys.exit()
-    
+
     path_to_folder = sys.argv[1]
 
     sorter(path_to_folder)
+
+if __name__ == '__main__':
+
+    main()
+    

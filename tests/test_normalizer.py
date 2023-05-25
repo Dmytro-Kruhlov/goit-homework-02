@@ -1,5 +1,5 @@
 import unittest
-import normalizer
+from clean_folder import normalizer
 
 class NormalizerTests(unittest.TestCase):
     def test_transliteration(self):

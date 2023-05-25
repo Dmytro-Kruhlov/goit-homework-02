@@ -1,6 +1,6 @@
 import os
 import shutil
-import data
+from clean_folder import data, mover, categorizer
 
 def extract_archive(archive_path: str, destination_folder: str):
     filename = os.path.basename(archive_path)
@@ -37,3 +37,6 @@ def remove_empty_folders(path: str):
             dir_path = os.path.join(root, dir_name)
             if not os.listdir(dir_path):
                 os.rmdir(dir_path)
+
+
+
