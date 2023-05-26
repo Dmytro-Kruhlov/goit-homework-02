@@ -14,6 +14,12 @@ def move_file(file_path: str, category: str):
     new_file_name = normalizer.normalize(name_without_extension)
     
     destination = os.path.join(new_folder, f"{new_file_name}.{utils.get_extension(filename)}")
+
+    counter = 1 
+    while os.path.exists(destination):
+        destination = os.path.join(new_folder, f"{new_file_name}_{counter}.{utils.get_extension(filename)}")
+        counter += 1
+        
     
     shutil.move(file_path, destination)
     
@@ -26,6 +32,7 @@ def move_archive(file_path: str):
     if not os.path.exists(category_folder):
         os.makedirs(category_folder)
 
+    
     extraction_folder = os.path.join(category_folder, name_without_extansion)
     utils.extract_archive(file_path, extraction_folder)
 

@@ -25,11 +25,12 @@ def move_archive(file_path: str):
     category_folder = os.path.join(os.path.dirname(file_path), category)
     if not os.path.exists(category_folder):
         os.makedirs(category_folder)
-
+        
+    normalized_name = normalizer.normalize(name_without_extansion)
     extraction_folder = os.path.join(category_folder, name_without_extansion)
     utils.extract_archive(file_path, extraction_folder)
 
-    normalized_name = normalizer.normalize(name_without_extansion)
+    
     new_folder_name = os.path.join(category_folder, normalized_name)
     os.rename(extraction_folder, new_folder_name)    
     os.remove(file_path)
