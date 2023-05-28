@@ -1,20 +1,20 @@
-import sys
+import sys, os
 from clean_folder import categorizer, mover, utils
 
 
 
 def sorter(path_to_folder: str):
     
-    file_paths = mover.move_files_from_subfolders(path_to_folder)
+    file_paths = utils.get_files_from_folder(path_to_folder)
     
     categorize_result = categorizer.categorize_files(file_paths)
 
     for category, files in categorize_result['to_move'].items():
         for file in files:
             if category == 'archives':
-                mover.move_archive(file)            
+                mover.move_archive(file, path_to_folder)            
             else:
-                mover.move_file(file, category)
+                mover.move_file(file, category, path_to_folder)
             
     utils.remove_empty_folders(path_to_folder)
     print(f"Categories: {categorize_result['to_move']}\n"

@@ -1,6 +1,6 @@
 import os
 import shutil
-from clean_folder import data, mover, categorizer
+from clean_folder import data
 
 def extract_archive(archive_path: str, destination_folder: str):
     filename = os.path.basename(archive_path)
